@@ -1,5 +1,5 @@
 plot1 <- function(){
-  #loading data
+  #loading data if not available
   if(!exists("dados")) {
     source("load.R")
     loadData()
@@ -12,26 +12,18 @@ plot1 <- function(){
       units="px",
       bg="transparent")
   
-  #ploting histogram
+  #load necessary library
   library(datasets)
-  #histogram
-  #hist(dados$Global_active_power)
   
-  # histogram with title
-  #hist(dados$Global_active_power, main= "Global Active Power")
-  
-  # with color
-  # hist(dados$Global_active_power, main= "Global Active Power", col="red")
-  
-  # with label
+  #plotting histogram
   hist(dados$Global_active_power, 
        main= "Global Active Power", 
        col="red", 
        xlab = "Global Active Power (kilowatts)")
   
-  
   # closing png file
   dev.off()
-
 }
+
+#function call
 plot1()

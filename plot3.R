@@ -1,5 +1,5 @@
 plot3 <- function(){
-  #loading data
+  #loading data if not available
   if(!exists("dados")) {
     source("load.R")
     loadData()

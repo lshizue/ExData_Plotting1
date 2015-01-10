@@ -1,5 +1,5 @@
 plot2 <- function(){
-  #loading data
+  #loading data if not available
   if(!exists("dados")) {
     source("load.R")
     loadData()
@@ -13,9 +13,9 @@ plot2 <- function(){
       bg="transparent")
   
   library(datasets)
+  
+  
   #ploting empty canvas
-  
-  
   par(mar= c(1, 4.1, 4.1, 2.1))
   
   plot(dados$Date, 
@@ -24,7 +24,7 @@ plot2 <- function(){
        xlab="",
        ylab="Global Active Power (kilowatts)")
   
-  # plotando 
+  # plotting line
   lines(dados$Date, dados$Global_active_power)
   
   # closing png file

@@ -1,5 +1,5 @@
 plot4 <- function (){
-  #loading data
+  #loading data if not available
   if(!exists("dados")) {
     source("load.R")
     loadData()
@@ -27,7 +27,7 @@ plot4 <- function (){
        xlab="",
        ylab="Global Active Power")
   
-  # lines 
+  # add lines 
   lines(dados$Date, dados$Global_active_power)
   
   
@@ -47,6 +47,7 @@ plot4 <- function (){
   lines(dados$Date, dados$Sub_metering_2, col=colors[2])
   lines(dados$Date, dados$Sub_metering_3, col=colors[3])
   
+  # adding legend
   legend("topright", # position
          lty = c(1,1), # lines
          col = colors,  # line colors
@@ -62,7 +63,7 @@ plot4 <- function (){
        xlab="datetime",
        ylab="Voltage")
   
-  # lines 
+  # adding lines 
   lines(dados$Date, dados$Voltage)
   
   
@@ -74,7 +75,7 @@ plot4 <- function (){
        xlab="datetime",
        ylab="Global_reactive_power")
   
-  # lines 
+  # adding lines 
   lines(dados$Date, dados$Global_reactive_power)
   
   # closing png file
